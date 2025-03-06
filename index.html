@@ -30,6 +30,10 @@
             color: var(--dark);
             background-color: var(--white);
         }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
 
         .container {
             width: 100%;
@@ -150,6 +154,7 @@
         .logo {
             display: flex;
             align-items: center;
+            z-index: 1001; /* Ensure logo stays above mobile menu */
         }
 
         .logo img {
@@ -166,6 +171,30 @@
         .logo span {
             color: var(--dark);
             font-weight: 400;
+        }
+        
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 1001; /* Ensure button stays above mobile menu */
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: block;
         }
 
         nav ul {
@@ -711,18 +740,97 @@
             h2 {
                 font-size: 2rem;
             }
-
+            
+            /* Mobile Header & Navigation */
+            header {
+                padding: 15px 0;
+            }
+            
             .header-content {
-                flex-direction: column;
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
             }
-
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            /* Mobile menu active state */
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 320px;
+                height: 100vh;
+                background-color: var(--white);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 20px 30px;
+                transition: right 0.3s ease;
+                overflow-y: auto;
+                z-index: 1000;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
             nav ul {
-                margin-top: 20px;
+                flex-direction: column;
+                margin-top: 0;
             }
-
+            
             nav ul li {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin: 0 0 20px 0;
+            }
+            
+            nav ul li a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 5px;
+            }
+            
+            nav ul li a:after {
+                display: none;
+            }
+            
+            nav ul li a.btn {
+                margin-top: 15px;
+                display: inline-block;
+                text-align: center;
+            }
+            
+            /* Overlay for mobile menu */
+            .menu-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+            
+            .menu-overlay.active {
+                display: block;
             }
 
             .feature-grid,
@@ -753,7 +861,12 @@
                 <div class="logo">
                     <h1>JMC<span>Agency</span></h1>
                 </div>
-                <nav>
+                <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="main-nav">
                     <ul>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
@@ -763,6 +876,7 @@
                         <li><a href="#" class="btn">Get Started</a></li>
                     </ul>
                 </nav>
+                <div class="menu-overlay" id="menu-overlay"></div>
             </div>
         </div>
     </header>
@@ -1179,5 +1293,41 @@
             </div>
         </div>
     </footer>
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+            const menuOverlay = document.getElementById('menu-overlay');
+            const navLinks = mainNav.querySelectorAll('a');
+            
+            // Toggle mobile menu
+            function toggleMobileMenu() {
+                mobileMenuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            }
+            
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            menuOverlay.addEventListener('click', toggleMobileMenu);
+            
+            // Close menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mainNav.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+            
+            // Close menu on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
