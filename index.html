@@ -3,555 +3,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreeLeads Pro | Exclusive Pay-Per-Call Leads for Tree Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>JMC Agency | Exclusive Tree Service Leads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2e7d32;
-            --secondary: #1b5e20;
-            --accent: #ff9800;
-            --light: #f5f5f5;
-            --dark: #333;
-            --white: #fff;
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            --accent-color: #FF9800;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --light-bg: #f9f9f9;
+            --dark-bg: #212121;
+            --border-radius: 5px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--text-color);
+            background-color: var(--white);
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        
-        /* Header */
-        header {
-            background-color: var(--primary);
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
             color: var(--white);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
         }
-        
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #F57C00;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
-        
+
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
+
+        .logo span {
+            color: var(--accent-color);
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 30px;
         }
-        
+
         .nav-links a {
-            color: var(--white);
             text-decoration: none;
+            color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
-        
+
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary-color);
         }
-        
-        .cta-button {
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background-color 0.3s;
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary-color);
         }
-        
-        .cta-button:hover {
-            background-color: #e68a00;
-        }
-        
-        /* Hero Section */
+
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3');
             background-size: cover;
             background-position: center;
-            color: var(--white);
-            padding: 100px 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
             text-align: center;
+            color: var(--white);
+            padding-top: 80px;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .hero-content {
             max-width: 800px;
-            margin: 0 auto 40px;
-        }
-        
-        .hero-cta {
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        .hero-cta:hover {
-            background-color: #e68a00;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .section-title p {
-            max-width: 700px;
             margin: 0 auto;
-            color: #666;
         }
-        
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .features {
+            background-color: var(--light-bg);
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
-            background-color: var(--light);
-            border-radius: 10px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
             padding: 30px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .feature-icon {
-            font-size: 3rem;
-            color: var(--primary);
+            font-size: 40px;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
+            font-size: 20px;
             margin-bottom: 15px;
-            color: var(--primary);
+            color: var(--primary-color);
         }
-        
-        /* How It Works Section */
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
         .how-it-works {
-            padding: 80px 0;
-            background-color: #f9f9f9;
+            background-color: var(--white);
         }
-        
+
         .steps {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-top: 40px;
+            counter-reset: step-counter;
         }
-        
+
         .step {
-            flex-basis: calc(33.333% - 30px);
-            margin-bottom: 40px;
+            flex: 0 0 calc(25% - 30px);
+            margin-bottom: 30px;
             text-align: center;
             position: relative;
+            padding: 20px;
         }
-        
-        .step-number {
-            background-color: var(--primary);
+
+        .step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
             color: var(--white);
-            width: 50px;
-            height: 50px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
+            font-weight: 700;
         }
-        
+
+        .step-icon {
+            font-size: 36px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
         .step h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
-        
-        /* Testimonials Section */
+
+        .step p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .benefits {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .benefits .section-title h2 {
+            color: var(--white);
+        }
+
+        .benefits .section-title h2:after {
+            background-color: var(--white);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .benefit-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+
+        .benefit-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
         .testimonials {
-            padding: 80px 0;
-            background-color: var(--primary);
-            color: var(--white);
+            background-color: var(--light-bg);
         }
-        
-        .testimonials .section-title h2 {
-            color: var(--white);
-        }
-        
-        .testimonials .section-title p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
+
         .testimonial-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .testimonial-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            background-color: var(--white);
             padding: 30px;
-            position: relative;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
-        
+
         .testimonial-text {
-            margin-bottom: 20px;
             font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
         }
-        
+
+        .testimonial-text:before {
+            content: '"';
+            font-size: 50px;
+            color: var(--primary-light);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+        }
+
         .testimonial-author {
-            display: flex;
-            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
         }
-        
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
+
+        .testimonial-company {
+            color: var(--text-light);
+            font-size: 14px;
         }
-        
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-        
-        /* Pricing Section */
-        .pricing {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .pricing-card {
-            background-color: var(--light);
-            border-radius: 10px;
-            padding: 40px 30px;
+
+        .cta {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
         }
-        
-        .pricing-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.featured {
-            background-color: var(--primary);
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
             color: var(--white);
         }
-        
-        .pricing-card.featured h3,
-        .pricing-card.featured .price {
-            color: var(--white);
-        }
-        
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        .price span {
-            font-size: 1rem;
-            font-weight: normal;
-        }
-        
-        .pricing-features {
-            list-style: none;
+
+        .cta p {
             margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .pricing-features li {
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .pricing-card.featured .pricing-features li {
-            border-bottom-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .pricing-card .cta-button {
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .pricing-card.featured .cta-button {
-            background-color: var(--white);
-            color: var(--primary);
-        }
-        
-        .pricing-card.featured .cta-button:hover {
-            background-color: #f0f0f0;
-        }
-        
-        /* FAQ Section */
-        .faq {
-            padding: 80px 0;
-            background-color: #f9f9f9;
-        }
-        
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .faq-question {
-            background-color: var(--white);
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: bold;
-        }
-        
-        .faq-answer {
-            background-color: var(--light);
-            padding: 20px;
-            display: none;
-        }
-        
-        .faq-answer.active {
-            display: block;
-        }
-        
-        /* Contact Section */
+
         .contact {
-            padding: 80px 0;
             background-color: var(--white);
         }
-        
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-            margin-top: 40px;
+            gap: 40px;
         }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
         }
-        
+
         .contact-item {
             display: flex;
-            align-items: center;
             margin-bottom: 20px;
         }
-        
+
         .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
+            font-size: 20px;
+            color: var(--primary-color);
             margin-right: 15px;
         }
-        
+
         .contact-form {
-            background-color: var(--light);
+            background-color: var(--light-bg);
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
         }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
+
+        .form-control {
             width: 100%;
-            padding: 12px;
+            padding: 10px 15px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             font-family: inherit;
-            font-size: 1rem;
         }
-        
-        .form-group textarea {
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
             height: 120px;
             resize: vertical;
         }
-        
-        .form-submit {
-            background-color: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
+
+        .faq {
+            background-color: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: var(--white);
+            box-shadow: var(--box-shadow);
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background-color: var(--white);
             cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .form-submit:hover {
-            background-color: var(--secondary);
+
+        .faq-question i {
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
         }
-        
-        /* Footer */
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 0 15px;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
         footer {
-            background-color: var(--dark);
+            background-color: var(--dark-bg);
             color: var(--white);
-            padding: 50px 0 20px;
+            padding: 60px 0 20px;
         }
-        
+
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
-        
+
         .footer-column h3 {
-            font-size: 1.2rem;
+            font-size: 18px;
             margin-bottom: 20px;
-            color: var(--accent);
+            color: var(--accent-color);
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
         }
-        
+
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: #aaa;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--primary-color);
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
         }
-        
+
         .social-links a {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.5rem;
+            color: var(--white);
+            font-size: 18px;
             transition: color 0.3s;
         }
-        
+
         .social-links a:hover {
-            color: var(--accent);
+            color: var(--accent-color);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #aaa;
         }
-        
-        /* Responsive */
+
+        @media (max-width: 992px) {
+            .step {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 32px;
             }
-            
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
             .step {
-                flex-basis: 100%;
+                flex: 0 0 100%;
             }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 576px) {
+            .feature-card,
+            .testimonial-card,
+            .benefit-item {
+                padding: 20px;
+            }
+
+            .feature-icon,
+            .step-icon {
+                font-size: 30px;
+            }
+
+            .section-padding {
+                padding: 60px 0;
             }
         }
     </style>
@@ -561,17 +614,17 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
-                    <i class="fas fa-tree"></i> TreeLeads Pro
-                </div>
+                <a href="#" class="logo">JMC <span>Agency</span></a>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact" class="cta-button">Get Started</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -579,47 +632,29 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Exclusive Tree Service Leads That Grow Your Business</h1>
-            <p>We deliver high-quality, exclusive phone call leads from homeowners in your area who need tree services right now. No shared leads. No wasted marketing dollars.</p>
-            <a href="#contact" class="hero-cta">Claim Your Exclusive Territory</a>
+            <div class="hero-content">
+                <h1>Exclusive Tree Service Leads That Grow Your Business</h1>
+                <p>We deliver high-quality, pre-qualified phone calls from homeowners needing tree removal and trimming services directly to your business.</p>
+                <a href="#contact" class="btn btn-accent">Claim Your Exclusive Territory</a>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features section-padding">
         <div class="container">
             <div class="section-title">
-                <h2>Why Tree Service Companies Choose Us</h2>
-                <p>Our pay-per-call system delivers exclusive, high-intent leads directly to your phone.</p>
+                <h2>Why Choose JMC Agency</h2>
+                <p>We specialize in generating exclusive tree service leads that help your business grow</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3>Exclusive Territory</h3>
-                    <p>We only work with ONE tree service company per service area. Your competitors won't get our leads.</p>
+                    <p>We only work with one tree service company per area, ensuring you don't compete for the same leads.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-phone-volume"></i>
-                    </div>
-                    <h3>Live Phone Calls</h3>
-                    <p>No form submissions or emails. Get connected directly with customers ready to book your services.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Pay Per Call</h3>
-                    <p>Only pay for qualified leads. No monthly fees or long-term contracts required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3>Pre-Qualified Leads</h3>
-                    <p>We filter out tire-kickers and price shoppers to deliver serious customers ready to hire.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature
+                        <i class="fas fa-phone-volume"></i
