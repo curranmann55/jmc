@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMC Agency - Premium HVAC Leads</title>
+    <title>TreeLeads Pro | Exclusive Pay-Per-Call Leads for Tree Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Reset and Base Styles */
+        :root {
+            --primary: #2e7d32;
+            --secondary: #1b5e20;
+            --accent: #ff9800;
+            --light: #f5f5f5;
+            --dark: #333;
+            --white: #fff;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -13,179 +22,175 @@
         }
         
         body {
-            font-family: 'Roboto', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #0073e6;
-        }
-        
-        img {
-            max-width: 100%;
+            color: var(--dark);
+            background-color: var(--light);
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ff6a00;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        
-        .btn:hover {
-            background-color: #e65c00;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-secondary {
-            background-color: #0073e6;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #0062c4;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #0f2b5b;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 60px;
-            color: #666;
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
         /* Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .header-container {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
         }
         
         .logo {
             font-size: 24px;
-            font-weight: 900;
-            color: #0f2b5b;
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
         
-        .logo span {
-            color: #ff6a00;
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
         }
         
-        .nav-list {
+        .nav-links {
             display: flex;
             list-style: none;
         }
         
-        .nav-item {
+        .nav-links li {
             margin-left: 30px;
         }
         
-        .nav-link {
-            color: #0f2b5b;
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
             font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
         
-        .nav-link:hover {
-            color: #ff6a00;
+        .nav-links a:hover {
+            color: var(--accent);
         }
         
-        .nav-btn {
-            margin-left: 30px;
+        .cta-button {
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #e68a00;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(15, 43, 91, 0.8), rgba(15, 43, 91, 0.9)), url('/api/placeholder/1200/500') center/cover no-repeat;
-            color: white;
-            padding: 120px 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1501084817091-a4f3d1d19e07');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
             text-align: center;
         }
         
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
         
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
         }
         
         .hero-cta {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
         }
         
-        /* How It Works */
+        .hero-cta:hover {
+            background-color: #e68a00;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* How It Works Section */
         .how-it-works {
-            background-color: #fafbff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .how-it-works::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(to right, #0073e6, #ff6a00);
+            padding: 80px 0;
+            background-color: #f9f9f9;
         }
         
         .steps {
@@ -193,281 +198,47 @@
             flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 40px;
-            position: relative;
         }
         
         .step {
-            flex-basis: calc(33.33% - 30px);
+            flex-basis: calc(33.333% - 30px);
+            margin-bottom: 40px;
             text-align: center;
-            padding: 40px 30px;
-            border-radius: 12px;
-            background: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-bottom: 4px solid transparent;
-        }
-        
-        .step:nth-child(1) {
-            border-bottom-color: #0073e6;
-        }
-        
-        .step:nth-child(2) {
-            border-bottom-color: #5f43b2;
-        }
-        
-        .step:nth-child(3) {
-            border-bottom-color: #ff6a00;
-        }
-        
-        .step:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            color: white;
-            font-weight: 700;
             position: relative;
         }
         
-        .step:nth-child(1) .step-icon {
-            background: linear-gradient(135deg, #0073e6, #36a0ff);
-            box-shadow: 0 5px 15px rgba(0, 115, 230, 0.3);
-        }
-        
-        .step:nth-child(2) .step-icon {
-            background: linear-gradient(135deg, #5f43b2, #9882e6);
-            box-shadow: 0 5px 15px rgba(95, 67, 178, 0.3);
-        }
-        
-        .step:nth-child(3) .step-icon {
-            background: linear-gradient(135deg, #ff6a00, #ffaa6a);
-            box-shadow: 0 5px 15px rgba(255, 106, 0, 0.3);
-        }
-        
-        .step-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #0f2b5b;
-        }
-        
-        .step-description {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* Benefits */
-        .benefits {
-            background-color: #f1f8ff;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .benefit {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
+        .step-number {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .benefit-icon {
-            display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
             margin: 0 auto 20px;
-            width: 80px;
-            height: 80px;
-            background-color: #f7f7f7;
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
         }
         
-        .benefit:hover .benefit-icon {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 106, 0, 0.15);
-            background-color: #fff8f3;
-        }
-        
-        .benefit-title {
-            font-size: 1.3rem;
+        .step h3 {
             margin-bottom: 15px;
-            color: #0f2b5b;
-            text-align: center;
-            width: 100%;
+            color: var(--primary);
         }
         
-        .benefit p {
-            color: #666;
-            text-align: center;
-            width: 100%;
-        }
-        
-        @media (max-width: 768px) {
-            .benefit {
-                padding: 25px 20px;
-            }
-            
-            .benefit-icon {
-                width: 70px;
-                height: 70px;
-                margin-bottom: 15px;
-            }
-            
-            .benefit-icon svg {
-                width: 40px;
-                height: 40px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .benefit-icon {
-                width: 60px;
-                height: 60px;
-            }
-            
-            .benefit-icon svg {
-                width: 32px;
-                height: 32px;
-            }
-            
-            .benefit-title {
-                font-size: 1.2rem;
-            }
-        }
-        
-        /* Account Dashboard */
-        .dashboard {
-            background-color: white;
-        }
-        
-        .dashboard-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .dashboard-image {
-            flex: 1;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .dashboard-text {
-            flex: 1;
-        }
-        
-        .dashboard-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #0f2b5b;
-        }
-        
-        .dashboard-features {
-            margin-top: 30px;
-        }
-        
-        .dashboard-feature {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .feature-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            margin-right: 15px;
-            color: #0073e6;
-        }
-        
-        /* Valid Lead Section */
-        .valid-lead {
-            background-color: #f9f9f9;
-        }
-        
-        .question-card {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .question {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #0f2b5b;
-            text-align: center;
-        }
-        
-        .answer {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .payment-info {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-        
-        .payment-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #0f2b5b;
-            text-align: center;
-        }
-        
-        /* Testimonials */
+        /* Testimonials Section */
         .testimonials {
-            background-color: white;
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: var(--white);
         }
         
-        .testimonial-container {
-            position: relative;
-            padding: 40px 0;
+        .testimonials .section-title h2 {
+            color: var(--white);
         }
         
-        .metrics-container {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 60px;
-        }
-        
-        .metric {
-            text-align: center;
-        }
-        
-        .metric-value {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #ff6a00;
-            margin-bottom: 10px;
-        }
-        
-        .metric-label {
-            font-size: 1.1rem;
-            color: #0f2b5b;
+        .testimonials .section-title p {
+            color: rgba(255, 255, 255, 0.8);
         }
         
         .testimonial-grid {
@@ -477,16 +248,14 @@
         }
         
         .testimonial-card {
-            background: #f1f8ff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             padding: 30px;
-            border-radius: 8px;
             position: relative;
         }
         
-        .testimonial-quote {
-            font-size: 1.1rem;
+        .testimonial-text {
             margin-bottom: 20px;
-            color: #333;
             font-style: italic;
         }
         
@@ -500,392 +269,289 @@
             height: 60px;
             border-radius: 50%;
             margin-right: 15px;
+            object-fit: cover;
         }
         
         .author-info h4 {
-            font-size: 1.1rem;
-            color: #0f2b5b;
+            margin-bottom: 5px;
         }
         
-        .author-info p {
-            font-size: 0.9rem;
-            color: #666;
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: var(--white);
         }
         
-        .testimonial-chart {
-            margin-top: 60px;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
         
-        .chart-title {
+        .pricing-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .pricing-card.featured h3,
+        .pricing-card.featured .price {
+            color: var(--white);
+        }
+        
+        .pricing-card h3 {
             font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            list-style: none;
             margin-bottom: 30px;
-            color: #0f2b5b;
-            text-align: center;
         }
         
-        .chart-container {
-            height: 400px;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
+        .pricing-features li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        .chart-bar {
-            width: 80px;
-            background: #0073e6;
-            border-radius: 5px 5px 0 0;
-            position: relative;
-            transition: all 0.3s ease;
+        .pricing-card.featured .pricing-features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
         }
         
-        .chart-bar:hover {
-            background: #ff6a00;
+        .pricing-card .cta-button {
+            display: inline-block;
+            width: 100%;
         }
         
-        .chart-bar-label {
-            position: absolute;
-            bottom: -30px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #333;
+        .pricing-card.featured .cta-button {
+            background-color: var(--white);
+            color: var(--primary);
         }
         
-        .chart-bar-value {
-            position: absolute;
-            top: -25px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: #0f2b5b;
+        .pricing-card.featured .cta-button:hover {
+            background-color: #f0f0f0;
         }
         
-        /* Contact */
-        .contact {
-            background: linear-gradient(rgba(15, 43, 91, 0.9), rgba(15, 43, 91, 0.9)), url('/api/placeholder/1200/500') center/cover no-repeat;
-            color: white;
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #f9f9f9;
         }
         
-        .contact-content {
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            background-color: var(--white);
+            padding: 20px;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .faq-answer {
+            background-color: var(--light);
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 50px;
+            margin-top: 40px;
         }
         
         .contact-info {
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 15px;
         }
         
         .contact-form {
-            flex: 1;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-        }
-        
-        .contact-title {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: white;
-        }
-        
-        .contact-form-title {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: #0f2b5b;
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .form-group {
             margin-bottom: 20px;
         }
         
-        .form-label {
+        .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: #555;
+            margin-bottom: 5px;
+            font-weight: 500;
         }
         
-        .form-input, .form-textarea {
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            font-family: inherit;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
         
-        .form-input:focus, .form-textarea:focus {
-            border-color: #0073e6;
-            outline: none;
-        }
-        
-        .form-textarea {
-            min-height: 150px;
+        .form-group textarea {
+            height: 120px;
             resize: vertical;
         }
         
-        .contact-details {
-            margin-top: 40px;
+        .form-submit {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
         
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            margin-right: 15px;
-            color: #ff6a00;
+        .form-submit:hover {
+            background-color: var(--secondary);
         }
         
         /* Footer */
         footer {
-            background-color: #0f2b5b;
-            color: white;
-            padding: 60px 0 30px;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 50px 0 20px;
         }
         
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
             margin-bottom: 40px;
         }
         
-        .footer-column {
-            flex-basis: 23%;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
+        .footer-column h3 {
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-logo span {
-            color: #ff6a00;
-        }
-        
-        .footer-text {
-            margin-bottom: 20px;
-            color: #ccc;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background: #ff6a00;
-            transform: translateY(-5px);
-        }
-        
-        .footer-title {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #ff6a00;
+            color: var(--accent);
         }
         
         .footer-links {
             list-style: none;
         }
         
-        .footer-link {
-            margin-bottom: 12px;
+        .footer-links li {
+            margin-bottom: 10px;
         }
         
-        .footer-link-anchor {
-            color: #ccc;
-            transition: color 0.3s ease;
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
         }
         
-        .footer-link-anchor:hover {
-            color: #ff6a00;
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
         }
         
         .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 40px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-        
-        .mobile-menu-toggle span {
-            display: block;
-            height: 4px;
-            width: 100%;
-            background-color: #0f2b5b;
-            border-radius: 3px;
-            transition: all 0.3s ease;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         /* Responsive */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.8rem;
-            }
-            
-            .step {
-                flex-basis: calc(50% - 20px);
-                margin-bottom: 40px;
-            }
-            
-            .dashboard-content {
-                flex-direction: column;
-            }
-            
-            .contact-content {
-                flex-direction: column;
-            }
-            
-            .footer-column {
-                flex-basis: 48%;
-            }
-            
-            .btn {
-                padding: 12px 20px;
-                font-size: 15px;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 15px 15x;
+            .nav-links {
+                display: none;
             }
             
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
-            #main-nav {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 250px;
-                height: 100vh;
-                background-color: white;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-                transition: right 0.3s ease;
-                z-index: 999;
-                padding: 80px 20px 30px;
-                overflow-y: auto;
-            }
-            
-            #main-nav.active {
-                right: 0;
-            }
-            
-            .nav-list {
-                flex-direction: column;
-                margin-top: 0;
-            }
-            
-            .nav-item {
-                margin: 0 0 20px;
-                width: 100%;
-            }
-            
-            .nav-link {
-                display: block;
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .nav-btn {
-                margin-top: 20px;
-            }
-            
-            .nav-btn .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
             .step {
                 flex-basis: 100%;
             }
             
-            .dashboard-content, .contact-content {
-                gap: 30px;
-            }
-            
-            .footer-column {
-                flex-basis: 100%;
-            }
-            
-            /* Overlay when menu is open */
-            .menu-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: transparent;
-                z-index: 998;
-            }
-            
-            .menu-overlay.active {
-                display: block;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -893,22 +559,18 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo" style="padding-left: 15px;">
-                JMC <span>Agency</span>
-            </div>
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle" style="padding-right: 15px;">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav id="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
-                    <li class="nav-item"><a href="#benefits" class="nav-link">Benefits</a></li>
-                    <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                    <li class="nav-item nav-btn"><a href="tel:6159623999" class="btn">Call Now: (615) 962-3999</a></li>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-tree"></i> TreeLeads Pro
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="cta-button">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -917,1535 +579,47 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Premium HVAC Leads Exclusively For Your Business</h1>
-            <p class="hero-subtitle">We generate high-quality, exclusive leads from homeowners actively seeking HVAC repair and installation/replacement services in your area.</p>
-            <div class="hero-cta">
-                <a href="tel:6159623999" class="btn">Call Now: (615) 962-3999</a>
-            </div>
+            <h1>Exclusive Tree Service Leads That Grow Your Business</h1>
+            <p>We deliver high-quality, exclusive phone call leads from homeowners in your area who need tree services right now. No shared leads. No wasted marketing dollars.</p>
+            <a href="#contact" class="hero-cta">Claim Your Exclusive Territory</a>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="section how-it-works">
+    <!-- Features Section -->
+    <section id="features" class="features">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Our simple three-step process delivers exclusive, high-quality HVAC leads directly to your business</p>
-            
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">1</div>
-                    <h3 class="step-title">We Generate Leads</h3>
-                    <p class="step-description">We use advanced marketing strategies to attract homeowners actively searching for HVAC repair or installation services.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">2</div>
-                    <h3 class="step-title">Direct Homeowner Calls</h3>
-                    <p class="step-description">Homeowners call directly to your business after finding our targeted advertisements. These are live, direct calls - never transfers.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-icon">3</div>
-                    <h3 class="step-title">You Pay Only For Results</h3>
-                    <p class="step-description">You only pay for valid leads - homeowners seeking HVAC services in your service area. No wasted marketing dollars.</p>
-                </div>
+            <div class="section-title">
+                <h2>Why Tree Service Companies Choose Us</h2>
+                <p>Our pay-per-call system delivers exclusive, high-intent leads directly to your phone.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section id="benefits" class="section benefits">
-        <div class="container">
-            <h2 class="section-title">Why Choose JMC Agency?</h2>
-            <p class="section-subtitle">We deliver exclusive HVAC leads that help you grow your business efficiently</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <circle cx="12" cy="12" r="6"></circle>
-                            <circle cx="12" cy="12" r="2"></circle>
-                        </svg>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3 class="benefit-title">Exclusive Leads</h3>
-                    <p>Every lead is exclusively yours - we never sell the same lead to multiple companies.</p>
+                    <h3>Exclusive Territory</h3>
+                    <p>We only work with ONE tree service company per service area. Your competitors won't get our leads.</p>
                 </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            <path d="M18 2c-2.4 0-4.36 2.02-5 3"></path>
-                            <line x1="14" y1="6" x2="16.5" y2="3.5"></line>
-                        </svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone-volume"></i>
                     </div>
-                    <h3 class="benefit-title">Direct Homeowner Calls</h3>
-                    <p>Receive calls directly from homeowners actively seeking HVAC services - no transfers, just real customers ready for service.</p>
+                    <h3>Live Phone Calls</h3>
+                    <p>No form submissions or emails. Get connected directly with customers ready to book your services.</p>
                 </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                        </svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
                     </div>
-                    <h3 class="benefit-title">Pay Per Valid Call</h3>
-                    <p>Only pay for qualified leads - homeowners in your service area looking for HVAC services.</p>
+                    <h3>Pay Per Call</h3>
+                    <p>Only pay for qualified leads. No monthly fees or long-term contracts required.</p>
                 </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                            <path d="M9 12l2 2 4-4"></path>
-                        </svg>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-filter"></i>
                     </div>
-                    <h3 class="benefit-title">Detailed Reporting</h3>
-                    <p>Access comprehensive call analytics and conversion data to track your ROI.</p>
+                    <h3>Pre-Qualified Leads</h3>
+                    <p>We filter out tire-kickers and price shoppers to deliver serious customers ready to hire.</p>
                 </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            <line x1="11" y1="8" x2="11" y2="14"></line>
-                            <line x1="8" y1="11" x2="14" y2="11"></line>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Quality Verification</h3>
-                    <p>Every call is screened to ensure it meets our strict qualification criteria.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#ff6a00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                            <path d="M10 8v8l6-4-6-4z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="benefit-title">Flexible Volume</h3>
-                    <p>Scale your lead volume up or down based on your capacity and business needs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Account Dashboard -->
-    <section class="section dashboard">
-        <div class="container">
-            <div class="dashboard-content">
-                <div class="dashboard-image">
-                    <img src="https://github.com/curranmann/convert-it/blob/main/images/Screen%20Shot%202025-03-18%20at%206.31.38%20PM.png?raw=true" alt="JMC Agency Dashboard">
-                </div>
-                <div class="dashboard-text">
-                    <h3 class="dashboard-title">Powerful Account Dashboard</h3>
-                    <p>Gain complete visibility and control over your HVAC lead generation campaign with our comprehensive dashboard.</p>
-                    
-                    <div class="dashboard-features">
-                        <div class="dashboard-feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Real-Time Call Tracking</h4>
-                                <p>Monitor incoming calls and conversions as they happen.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Call Recording & Quality Control</h4>
-                                <p>Listen to recorded calls to ensure quality and improve your team's performance.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Analytics & Reporting</h4>
-                                <p>Access detailed reports on call volume, conversion rates, and ROI.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="dashboard-feature">
-                            <div class="feature-icon">✓</div>
-                            <div>
-                                <h4>Campaign Settings</h4>
-                                <p>Adjust your target areas, lead volume, and business hours.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Valid Lead Section -->
-    <section class="section valid-lead">
-        <div class="container">
-            <h2 class="section-title">What is a Valid Lead?</h2>
-            <div class="valid-lead-container">
-                <div class="valid-lead-card">
-                    <div class="valid-lead-icon">✓</div>
-                    <div class="valid-lead-content">
-                        <h3>Valid Lead Criteria</h3>
-                        <div class="criteria-list">
-                            <div class="criteria-item">
-                                <div class="criteria-check">✓</div>
-                                <p>Homeowner (not a renter or property manager)</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-check">✓</div>
-                                <p>Seeking HVAC repair or installation/replacement services</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-check">✓</div>
-                                <p>Located within your defined service area</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-check">✓</div>
-                                <p>Call duration of 60+ seconds or booking an appointment</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-check">✓</div>
-                                <p>First-time caller (within a 30-day period)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="valid-lead-card">
-                    <div class="valid-lead-icon">$</div>
-                    <div class="valid-lead-content">
-                        <h3>When Payment is Due</h3>
-                        <p class="payment-subtitle">Payment is only due for calls that meet our valid lead criteria.</p>
-                        <div class="payment-divider"></div>
-                        <h4>You Will NEVER Pay For:</h4>
-                        <div class="criteria-list">
-                            <div class="criteria-item">
-                                <div class="criteria-cross">✕</div>
-                                <p>Wrong numbers or spam calls</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-cross">✕</div>
-                                <p>Solicitation calls</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-cross">✕</div>
-                                <p>Calls from outside your service area</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-cross">✕</div>
-                                <p>Calls about services you don't offer</p>
-                            </div>
-                            <div class="criteria-item">
-                                <div class="criteria-cross">✕</div>
-                                <p>Duplicate calls from the same customer within 30 days</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        .valid-lead {
-            background-color: #f5f9ff;
-            padding: 100px 0;
-        }
-        
-        .valid-lead-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .valid-lead-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            display: flex;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .valid-lead-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .valid-lead-icon {
-            flex: 0 0 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: white;
-            background: linear-gradient(135deg, #0073e6, #0f2b5b);
-        }
-        
-        .valid-lead-card:nth-child(2) .valid-lead-icon {
-            background: linear-gradient(135deg, #ff6a00, #e65c00);
-        }
-        
-        .valid-lead-content {
-            flex: 1;
-            padding: 30px;
-        }
-        
-        .valid-lead-content h3 {
-            color: #0f2b5b;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .criteria-list {
-            margin-top: 20px;
-        }
-        
-        .criteria-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .criteria-check, .criteria-cross {
-            flex: 0 0 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            margin-right: 15px;
-            margin-top: 2px;
-        }
-        
-        .criteria-check {
-            background-color: #e6f4ff;
-            color: #0073e6;
-        }
-        
-        .criteria-cross {
-            background-color: #ffe6e6;
-            color: #e63c3c;
-        }
-        
-        .criteria-item p {
-            flex: 1;
-            margin: 0;
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        .payment-subtitle {
-            color: #666;
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-        }
-        
-        .payment-divider {
-            height: 1px;
-            background-color: #f0f0f0;
-            margin: 20px 0;
-        }
-        
-        .valid-lead-content h4 {
-            color: #0f2b5b;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        
-        @media (max-width: 992px) {
-            .valid-lead-container {
-                flex-direction: column;
-            }
-            
-            .valid-lead-card {
-                width: 100%;
-            }
-        }
-    </style>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our HVAC Clients Say</h2>
-            <p class="section-subtitle">See how JMC Agency has transformed HVAC businesses across the country</p>
-            
-            <div class="testimonial-container">
-                <div class="results-overview">
-                    <h3 class="results-title">The Results Speak for Themselves</h3>
-                    
-                    <div class="metrics-container">
-                        <div class="metric">
-                            <div class="metric-circle">
-                                <div class="metric-value">85<span>%</span></div>
-                            </div>
-                            <div class="metric-label">Average Conversion Rate</div>
-                        </div>
-                        
-                        <div class="metric">
-                            <div class="metric-circle">
-                                <div class="metric-value">21.2<span>x</span></div>
-                            </div>
-                            <div class="metric-label">Average ROI</div>
-                        </div>
-                        
-                        <div class="metric">
-                            <div class="metric-circle">
-                                <div class="metric-value">$4,250</div>
-                            </div>
-                            <div class="metric-label">Avg. Value Per Call</div>
-                        </div>
-                        
-                        <div class="metric">
-                            <div class="metric-circle">
-                                <div class="metric-value">62<span>%</span></div>
-                            </div>
-                            <div class="metric-label">Reduced Acquisition Cost</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-rating">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="testimonial-stats">
-                                <div class="stat">
-                                    <div class="stat-value">215%</div>
-                                    <div class="stat-label">Rise in Installations</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="stat-value">78%</div>
-                                    <div class="stat-label">Growth in Service Calls</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-body">
-                            <p class="testimonial-quote">"Since partnering with JMC Agency, our customer acquisition cost has dropped over 50%. The quality of the HVAC leads is exceptional - these are homeowners ready to book services right away. Each call is direct from a homeowner with a real need. The return on our investment has been staggering - we're projecting a 230% increase in annual revenue this year alone."</p>
-                        </div>
-                        
-                        <div class="testimonial-author">
-                            <div class="author-image-container">
-                                <img src="https://github.com/curranmann/convert-it/blob/main/images/Screen%20Shot%202025-01-29%20at%208.12.38%20PM.png?raw=true" alt="Amer Zahir" class="author-image">
-                                <!-- Replace with AI-generated headshot for James Wilson - casual HVAC business owner, 40s, male -->
-                            </div>
-                            <div class="author-info">
-                                <h4>Amer Zahir</h4>
-                                <p>Zahir HVAC Services</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-rating">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="testimonial-stats">
-                                <div class="stat">
-                                    <div class="stat-value">127%</div>
-                                    <div class="stat-label">Business Growth</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="stat-value">3</div>
-                                    <div class="stat-label">New Technicians Hired</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-body">
-                            <p class="testimonial-quote">"We wasted thousands on traditional advertising before finding JMC Agency. Now we only pay for actual HVAC leads from homeowners ready to book. These are real, direct calls from homeowners, not transfers. Our business has grown 127% in just 8 months, and we've had to hire 3 new technicians to keep up with demand. Every each call is well worth it's weight in gold."</p>
-                        </div>
-                        
-                        <div class="testimonial-author">
-                            <div class="author-image-container">
-                                <img src="https://github.com/curranmann/convert-it/blob/main/images/Screen%20Shot%202025-01-29%20at%208.09.16%20PM.png?raw=true" alt="Sarah Johnson" class="author-image">
-                                <!-- Replace with AI-generated headshot for Sarah Johnson - female HVAC business owner, 30s -->
-                            </div>
-                            <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>Comfort Air Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="testimonial-rating">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                            <div class="testimonial-stats">
-                                <div class="stat">
-                                    <div class="stat-value">190%</div>
-                                    <div class="stat-label">Return on Investment</div>
-                                </div>
-                                <div class="stat">
-                                    <div class="stat-value">40%</div>
-                                    <div class="stat-label">Marketing Budget Reduction</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-body">
-                            <p class="testimonial-quote">"The return on investment with JMC Agency is incredible. We're seeing a ~190% ROI on every dollar spent. The leads come in pre-qualified and ready to convert - all direct calls from homeowners needing our services immediately. We've doubled our high-value installation jobs while cutting our marketing budget by 40%. For every $1000 we spend with JMC Agency, we generate over $20,000 in new business."</p>
-                        </div>
-                        
-                        <div class="testimonial-author">
-                            <div class="author-image-container">
-                                <img src="https://github.com/curranmann/convert-it/blob/main/images/Screen%20Shot%202025-01-29%20at%208.10.12%20PM.png?raw=true" alt="Michael Garcia" class="author-image">
-                                <!-- Replace with AI-generated headshot for Michael Garcia - Hispanic HVAC business owner, 40s -->
-                            </div>
-                            <div class="author-info">
-                                <h4>Michael Garcia</h4>
-                                <p>Premier Heating & Cooling</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="roi-chart-container">
-                    <div class="roi-chart-header">
-                        <h3 class="roi-chart-title">Average Return on Investment by Month</h3>
-                        <p class="roi-chart-subtitle">Watch your ROI grow month after month with our proven lead generation system</p>
-                    </div>
-                    
-                    <div class="roi-chart">
-                        <div class="roi-axis-y">
-                            <div class="roi-axis-label">0.0x</div>
-                            <div class="roi-axis-label">0.5x</div>
-                            <div class="roi-axis-label">1.0x</div>
-                            <div class="roi-axis-label">1.5x</div>
-                            <div class="roi-axis-label">2.0x</div>
-                            <div class="roi-axis-label">2.5x</div>
-                            <div class="roi-axis-label">3.0x</div>
-                        </div>
-                        
-                        <div class="roi-bars">
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 80px;" data-height="80px">
-                                    <div class="roi-bar-value">1.2x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 1</div>
-                            </div>
-                            
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 100px;" data-height="100px">
-                                    <div class="roi-bar-value">1.5x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 2</div>
-                            </div>
-                            
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 120px;" data-height="120px">
-                                    <div class="roi-bar-value">1.8x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 3</div>
-                            </div>
-                            
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 140px;" data-height="140px">
-                                    <div class="roi-bar-value">2.0x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 4</div>
-                            </div>
-                            
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 160px;" data-height="160px">
-                                    <div class="roi-bar-value">2.2x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 5</div>
-                            </div>
-                            
-                            <div class="roi-bar-wrapper">
-                                <div class="roi-bar" style="height: 180px;" data-height="180px">
-                                    <div class="roi-bar-value">2.5x</div>
-                                </div>
-                                <div class="roi-bar-label">Month 6</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        /* Enhanced Testimonials Section */
-        .testimonials {
-            background-color: #fff;
-            padding: 100px 0;
-        }
-        
-        .results-overview {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .results-title {
-            font-size: 1.8rem;
-            color: #0f2b5b;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .results-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, #0073e6, #0f2b5b);
-        }
-        
-        .metrics-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-        
-        .metric {
-            flex: 0 0 200px;
-            text-align: center;
-        }
-        
-        .metric-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .metric-circle:before {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            right: 5px;
-            bottom: 5px;
-            border-radius: 50%;
-            border: 2px solid #f0f0f0;
-        }
-        
-        .metric:nth-child(1) .metric-circle {
-            background: linear-gradient(135deg, rgba(0, 115, 230, 0.1), rgba(0, 115, 230, 0.2));
-        }
-        
-        .metric:nth-child(2) .metric-circle {
-            background: linear-gradient(135deg, rgba(255, 106, 0, 0.1), rgba(255, 106, 0, 0.2));
-        }
-        
-        .metric:nth-child(3) .metric-circle {
-            background: linear-gradient(135deg, rgba(46, 184, 92, 0.1), rgba(46, 184, 92, 0.2));
-        }
-        
-        .metric:nth-child(4) .metric-circle {
-            background: linear-gradient(135deg, rgba(156, 39, 176, 0.1), rgba(156, 39, 176, 0.2));
-        }
-        
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0f2b5b;
-            line-height: 1;
-        }
-        
-        .metric:nth-child(1) .metric-value {
-            color: #0073e6;
-        }
-        
-        .metric:nth-child(2) .metric-value {
-            color: #ff6a00;
-        }
-        
-        .metric:nth-child(3) .metric-value {
-            color: #2eb85c;
-        }
-        
-        .metric:nth-child(4) .metric-value {
-            color: #9c27b0;
-        }
-        
-        .metric-value span {
-            font-size: 1.8rem;
-        }
-        
-        .metric-label {
-            font-size: 1.1rem;
-            color: #555;
-            font-weight: 600;
-        }
-        
-        /* Testimonial Cards */
-        .testimonial-wrapper {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-        }
-        
-        .testimonial-header {
-            background: linear-gradient(135deg, #f1f8ff, #e6f4ff);
-            padding: 25px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .testimonial-rating {
-            margin-bottom: 15px;
-            color: #ffb400;
-            font-size: 20px;
-            letter-spacing: 2px;
-            text-align: center; /* Add this line to center the stars */
-        }
-        
-        .testimonial-stats {
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .stat {
-            text-align: center;
-            flex: 1;
-        }
-        
-        .stat-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0073e6;
-            line-height: 1.2;
-        }
-        
-        .stat-label {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 5px;
-        }
-        
-        .testimonial-body {
-            padding: 30px 25px;
-            flex: 1;
-        }
-        
-        .testimonial-quote {
-            font-size: 1.05rem;
-            color: #444;
-            line-height: 1.7;
-            position: relative;
-            margin: 0;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            padding: 20px 25px;
-            background: #f9f9f9;
-            border-top: 1px solid #eee;
-        }
-        
-        .author-image-container {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin-right: 15px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .author-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            border-radius: 50%;
-        }
-        
-        .author-info h4 {
-            font-size: 1.1rem;
-            color: #0f2b5b;
-            margin: 0 0 5px;
-        }
-        
-        .author-info p {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 0;
-        }
-        
-        /* ROI Chart */
-        .roi-chart-container {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-            margin-top: 60px;
-            border: 1px solid #e5e5e5;
-        }
-        
-        .roi-chart-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .roi-chart-title {
-            font-size: 1.8rem;
-            color: #0f2b5b;
-            margin-bottom: 10px;
-        }
-        
-        .roi-chart-subtitle {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .roi-chart {
-            display: flex;
-            height: 400px;
-            margin-top: 50px;
-            position: relative;
-            background-color: #f9fafb;
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #eaeaea;
-        }
-        
-        .roi-axis-y {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-right: 20px;
-            width: 60px;
-        }
-        
-        .roi-axis-label {
-            color: #555;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: right;
-        }
-        
-        .roi-bars {
-            flex: 1;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            border-bottom: 2px solid #ddd;
-            border-left: 2px solid #ddd;
-            padding-left: 20px;
-            position: relative;
-            height: 350px;
-        }
-        
-        .roi-bars:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            top: 0;
-            background: repeating-linear-gradient(
-                to top,
-                transparent,
-                transparent calc(100% / 6 - 1px),
-                rgba(0, 0, 0, 0.08) calc(100% / 6 - 1px),
-                rgba(0, 0, 0, 0.08) calc(100% / 6)
-            );
-            pointer-events: none;
-        }
-        
-        .roi-bar-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 12%;
-            max-width: 90px;
-            height: 100%;
-        }
-        
-        .roi-bar {
-            width: 70%;
-            max-width: 60px;
-            background: linear-gradient(to top, #0057b3, #36a0ff);
-            border-radius: 6px 6px 0 0;
-            position: relative;
-            transition: height 1s ease-out;
-            box-shadow: 0 3px 10px rgba(0, 87, 179, 0.2);
-            align-self: flex-end;
-        }
-        
-        .roi-bar-value {
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #0f2b5b;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            white-space: nowrap;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .roi-bar-value:after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 5px;
-            border-style: solid;
-            border-color: #0f2b5b transparent transparent transparent;
-        }
-        
-        .roi-bar-label {
-            margin-top: 15px;
-            color: #444;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-align: center;
-            position: absolute;
-            bottom: -40px;
-            left: 0;
-            right: 0;
-        }
-        
-        @media (max-width: 992px) {
-            .roi-chart-container {
-                padding: 30px;
-            }
-            
-            .roi-chart {
-                height: 350px;
-                margin-top: 30px;
-                padding-bottom: 50px;
-            }
-            
-            .roi-bars {
-                height: 280px;
-            }
-            
-            .roi-chart-title {
-                font-size: 1.6rem;
-            }
-            
-            .roi-bar-label {
-                bottom: -35px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .roi-chart-container {
-                padding: 20px;
-                margin-top: 40px;
-            }
-            
-            .roi-chart {
-                height: 350px;
-                padding: 15px 15px 60px;
-                margin-top: 20px;
-            }
-            
-            .roi-bars {
-                height: 250px;
-                padding-left: 10px;
-            }
-            
-            .roi-axis-y {
-                width: 50px;
-                padding-right: 10px;
-            }
-            
-            .roi-axis-label {
-                font-size: 0.8rem;
-            }
-            
-            .roi-bar-wrapper {
-                width: 14%;
-            }
-            
-            .roi-bar {
-                width: 85%;
-            }
-            
-            /* Stagger the value indicators on tablet */
-            .roi-bar-wrapper:nth-child(even) .roi-bar-value {
-                top: -60px;
-            }
-            
-            .roi-bar-value {
-                font-size: 0.8rem;
-                padding: 4px 8px;
-                top: -35px;
-            }
-            
-            .roi-bar-label {
-                font-size: 0.8rem;
-                bottom: -40px;
-            }
-            
-            .roi-chart-title {
-                font-size: 1.4rem;
-            }
-            
-            .roi-chart-subtitle {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .roi-chart-container {
-                padding: 15px;
-            }
-            
-            .roi-chart {
-                height: 300px;
-                padding: 10px 10px 70px 5px;
-            }
-            
-            .roi-bars {
-                height: 200px;
-                padding-left: 5px;
-            }
-            
-            .roi-axis-y {
-                width: 35px;
-                padding-right: 5px;
-            }
-            
-            .roi-axis-label {
-                font-size: 0.7rem;
-            }
-            
-            .roi-bar-wrapper {
-                width: 16%;
-            }
-            
-            /* Only display every other bar label on mobile */
-            .roi-bar-wrapper:nth-child(odd) .roi-bar-label {
-                opacity: 0.5;
-                font-size: 0.7rem;
-            }
-            
-            /* Stagger the value indicators even more on mobile */
-            .roi-bar-wrapper:nth-child(1) .roi-bar-value,
-            .roi-bar-wrapper:nth-child(3) .roi-bar-value,
-            .roi-bar-wrapper:nth-child(5) .roi-bar-value {
-                top: -35px;
-            }
-            
-            .roi-bar-wrapper:nth-child(2) .roi-bar-value,
-            .roi-bar-wrapper:nth-child(4) .roi-bar-value,
-            .roi-bar-wrapper:nth-child(6) .roi-bar-value {
-                top: -65px;
-            }
-            
-            .roi-bar {
-                width: 70%;
-            }
-            
-            .roi-bar-value {
-                font-size: 0.7rem;
-                padding: 3px 6px;
-                min-width: 36px;
-                text-align: center;
-            }
-            
-            .roi-bar-label {
-                font-size: 0.7rem;
-                bottom: -45px;
-            }
-            
-            .roi-chart-title {
-                font-size: 1.2rem;
-            }
-            
-            .roi-chart-subtitle {
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .testimonial-wrapper {
-                grid-template-columns: 1fr;
-            }
-            
-            .metric {
-                flex: 0 0 calc(50% - 20px);
-                margin-bottom: 30px;
-            }
-            
-            .roi-chart {
-                height: 350px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .metric {
-                flex: 0 0 100%;
-            }
-            
-            .roi-bar-wrapper {
-                width: 15%;
-            }
-            
-            .roi-chart {
-                height: 300px;
-            }
-            
-            .stat-value {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2 class="contact-title">Ready to Grow Your HVAC Business?</h2>
-                    <p>Contact us today to learn how JMC Agency can deliver exclusive HVAC leads that will help your business thrive.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:6159623999" class="contact-link">(615) 962-3999</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:JMCtowingagency@gmail.com" class="contact-link">JMCtowingagency@gmail.com</a></p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Business Hours</h4>
-                                <p>9-5am<br>Monday-Saturday</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-container">
-                        <a href="tel:6159623999" class="btn btn-cta">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cta-icon">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                            Call Now: (615) 962-3999
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <style>
-        /* Enhanced Contact Section */
-        .contact {
-            background: linear-gradient(rgba(15, 43, 91, 0.95), rgba(15, 43, 91, 0.95)), url('/api/placeholder/1200/500') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-        }
-        
-        .contact-content {
-            display: flex;
-            justify-content: center;
-        }
-        
-        .contact-info {
-            max-width: 800px;
-            text-align: center;
-        }
-        
-        .contact-title {
-            font-size: 2.5rem;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 15px;
-            text-align: center;
-        }
-        
-        .contact-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #ff6a00;
-        }
-        
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.7;
-        }
-        
-        .contact-details {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            min-width: 220px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-        
-        .contact-icon {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            color: #ff6a00;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover .contact-icon {
-            background: #ff6a00;
-            color: white;
-        }
-        
-        .contact-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: white;
-            text-align: left;
-        }
-        
-        .contact-item p {
-            font-size: 1rem;
-            margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: left;
-        }
-        
-        .contact-link {
-            color: rgba(255, 255, 255, 0.8);
-            transition: color 0.3s ease;
-        }
-        
-        .contact-link:hover {
-            color: #ff6a00;
-        }
-        
-        .cta-container {
-            margin-top: 40px;
-        }
-        
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: #ff6a00;
-            color: white;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-cta:hover {
-            background-color: #ff8124;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 106, 0, 0.4);
-        }
-        
-        .cta-icon {
-            margin-right: 10px;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-details {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-item {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .contact-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-logo">JMC <span>Agency</span></div>
-                    <p class="footer-text">JMC Agency is a premium pay-per-call agency specializing in generating exclusive, high-quality HVAC repair and installation leads for local service providers.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon">f</a>
-                        <a href="#" class="social-icon">t</a>
-                        <a href="#" class="social-icon">in</a>
-                        <a href="#" class="social-icon">ig</a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">Home</a></li>
-                        <li class="footer-link"><a href="#how-it-works" class="footer-link-anchor">How It Works</a></li>
-                        <li class="footer-link"><a href="#benefits" class="footer-link-anchor">Benefits</a></li>
-                        <li class="footer-link"><a href="#testimonials" class="footer-link-anchor">Testimonials</a></li>
-                        <li class="footer-link"><a href="#contact" class="footer-link-anchor">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">HVAC Services</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">HVAC Repair</a></li>
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">HVAC Installation</a></li>
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">HVAC Replacement</a></li>
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">AC Services</a></li>
-                        <li class="footer-link"><a href="#" class="footer-link-anchor">Heating Services</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3 class="footer-title">Contact Us</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link">
-                            <a href="tel:6159623999" class="footer-link-anchor">(615) 962-3999</a>
-                        </li>
-                        <li class="footer-link">
-                            <a href="mailto:info@JMC-agency.com" class="footer-link-anchor">info@JMC-agency.com</a>
-                        </li>
-                        <li class="footer-link">
-                            <span class="footer-link-anchor">9-5am<br>Monday-Saturday</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 JMC Agency. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-    const body = document.body;
-    
-    // Create overlay element
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    body.appendChild(overlay);
-    
-    // Toggle menu function
-    function toggleMenu() {
-        mainNav.classList.toggle('active');
-        overlay.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-        body.classList.toggle('menu-open');
-    }
-    
-    // Event listeners
-    if(menuToggle) {
-        menuToggle.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-    }
-    
-    // Close menu when clicking on a nav link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Get the href attribute
-            const href = this.getAttribute('href');
-            
-            // Only handle internal links (those starting with #)
-            if (href && href.startsWith('#')) {
-                // Get the target element
-                const targetElement = document.querySelector(href);
-                
-                if (targetElement) {
-                    // Close the mobile menu if it's open
-                    if (mainNav && mainNav.classList.contains('active')) {
-                        toggleMenu();
-                    }
-                    
-                    // Small delay to allow menu to close before scrolling
-                    setTimeout(() => {
-                        // Scroll to the element
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }, 300);
-                }
-            }
-        });
-    });
-    
-    // Animate ROI chart bars when they come into view
-    const roiBars = document.querySelectorAll('.roi-bar');
-    
-    if(roiBars.length > 0) {
-        // Store original heights from data attribute and initially set all to 0
-        roiBars.forEach(bar => {
-            const originalHeight = bar.getAttribute('data-height');
-            // Start with no height
-            bar.style.height = '0px';
-            
-            // Store in a data attribute for responsive designs
-            if (originalHeight) {
-                bar.setAttribute('data-original-height', originalHeight);
-            }
-        });
-        
-        function animateBars() {
-            roiBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    const originalHeight = bar.getAttribute('data-height');
-                    if (originalHeight) {
-                        bar.style.transition = 'height 1s ease-out';
-                        bar.style.height = originalHeight;
-                    }
-                }, index * 150);
-            });
-        }
-        
-        // Use Intersection Observer for animation
-        const observeRoiChart = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(animateBars, 400);
-                    observeRoiChart.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        const roiChart = document.querySelector('.roi-chart');
-        if (roiChart) {
-            observeRoiChart.observe(roiChart);
-        }
-    }
-    
-    // Animate metrics when they come into view
-    const metrics = document.querySelectorAll('.metric-circle');
-    if(metrics.length > 0) {
-        metrics.forEach(metric => {
-            metric.style.transform = 'scale(0.5)';
-            metric.style.opacity = '0';
-        });
-        
-        const observeMetrics = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        metrics.forEach((metric, index) => {
-                            setTimeout(() => {
-                                metric.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                                metric.style.transform = 'scale(1)';
-                                metric.style.opacity = '1';
-                            }, index * 150);
-                        });
-                    }, 400);
-                    observeMetrics.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        const metricsContainer = document.querySelector('.metrics-container');
-        if (metricsContainer) {
-            observeMetrics.observe(metricsContainer);
-        }
-    }
-});
-</script>
-</body>
-</html>
+                <div class="feature-card">
+                    <div class="feature
