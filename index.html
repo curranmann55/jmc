@@ -3,328 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMC Agency | Exclusive Tree Service Leads</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Emergency Tree Service | 24/7 Tree Removal & Cutting</title>
     <style>
-        :root {
-            --primary-color: #4CAF50;
-            --primary-dark: #388E3C;
-            --primary-light: #C8E6C9;
-            --accent-color: #FF9800;
-            --text-color: #333333;
-            --text-light: #666666;
-            --white: #ffffff;
-            --light-bg: #f9f9f9;
-            --dark-bg: #212121;
-            --border-radius: 5px;
-            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
-
         body {
-            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--white);
+            color: #333;
         }
-
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 12px 25px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow);
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
         header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background-color: #005500;
+            color: white;
             padding: 20px 0;
+            text-align: center;
         }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('tree-removal-hero.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .features {
-            background-color: var(--light-bg);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .testimonials {
-            background-color: var(--white);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .cta {
-            background-color: var(--primary-color);
-            color: var(--white);
+            color: white;
+            padding: 100px 0;
             text-align: center;
         }
-
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: var(--white);
-        }
-
-        .contact-form {
-            background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-family: inherit;
-        }
-
-        footer {
-            background-color: var(--dark-bg);
-            color: var(--white);
-            padding: 60px 0 20px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #aaa;
+        .cta-button {
+            display: inline-block;
+            background-color: #FF6B00;
+            color: white;
+            padding: 15px 30px;
             text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            color: var(--white);
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
             font-size: 18px;
-            transition: color 0.3s ease;
         }
-
-        .social-links a:hover {
-            color: var(--accent-color);
+        .phone-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #FF6B00;
         }
-
-        .footer-bottom {
+        .service-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1, h2, h3 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 5px;
+            margin: 40px 0;
+            font-style: italic;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
-            color: #aaa;
         }
-
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .feature {
+            text-align: center;
+            max-width: 300px;
+            margin: 20px;
+        }
+        .checkmark {
+            color: #4CAF50;
+            font-weight: bold;
+        }
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
+            .service-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -332,127 +111,203 @@
 <body>
     <header>
         <div class="container">
-            <nav>
-                <a href="#" class="logo">JMC Agency</a>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <h1>Emergency Tree Service</h1>
+            <p>Fast, Same-Day Service Available.</p>
+            <div class="phone-number">Call Now: (888) 329-8026</div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Exclusive Tree Service Leads That Grow Your Business</h1>
-                <p>We deliver high-quality, pre-qualified phone calls from homeowners needing tree removal and trimming services directly to your business.</p>
-                <a href="#contact" class="btn">Claim Your Exclusive Territory</a>
+            <h2>I Need Service Today →</h2>
+            <div class="phone-number">Call us 24/7 at (888) 329-8026</div>
+            <div class="features">
+                <div class="feature">
+                    <p><span class="checkmark">✓</span> 24-Hour Service,<br>Removal & Cutting</p>
+                </div>
+                <div class="feature">
+                    <p>Quick Response,<br>7 Days a Week</p>
+                </div>
+            </div>
+            <a href="tel:8883298026" class="cta-button">CALL NOW</a>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Your Local Tree Experts: We Can Remove or Cut Trees Today</h2>
+            <p>Looking for a tree removal or cutting expert in your area? Whether you have a hazardous tree that needs to be removed or storm damage that requires immediate attention, our technicians can get the job done - Quickly and safely.</p>
+            <p>From emergency removal and cutting to stump grinding and everything in between, our 24-hour tree service experts can help with:</p>
+            <ul>
+                <li>Emergency Tree Removal</li>
+                <li>Large Tree Removal</li>
+                <li>Hazardous Tree Cutting</li>
+                <li>Storm Damage Cleanup</li>
+                <li>Fallen Tree Removal</li>
+                <li>Tree Cutting Services</li>
+                <li>Dangerous Tree Removal</li>
+                <li>24/7 Emergency Response</li>
+            </ul>
+            <p>Need service today? Our tree experts are standing by 24/7, ready to help you. Call us now at (888) 329-8026 for fast service, day or night.</p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Tree Removal Services</h2>
+            <p>Having trouble with a dangerous or fallen tree? Whether you have a tree that's threatening your property or one that's already fallen, our experienced technicians can help with any removal, including:</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Emergency Tree Removal</h3>
+                    <p>Fast response for hazardous situations requiring immediate attention.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Large Tree Removal</h3>
+                    <p>Safe removal of tall or massive trees requiring specialized equipment.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Fallen Tree Removal</h3>
+                    <p>Quick cleanup of trees that have fallen due to storms or disease.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Dangerous Tree Removal</h3>
+                    <p>Expert removal of trees threatening structures or power lines.</p>
+                </div>
+            </div>
+            <p>How much will your tree removal cost? While a soft quote can usually be given over the phone, getting an accurate estimate is best done in person. Generally, the cost is based on a number of factors, such as:</p>
+            <ul>
+                <li>Size and Height of the Tree</li>
+                <li>Location and Accessibility</li>
+                <li>Tree Species and Condition</li>
+                <li>Proximity to Structures</li>
+                <li>Amount of Labor Involved</li>
+                <li>Equipment Required For Removal</li>
+            </ul>
+            <p>Need help with a tree problem? Call us anytime, day or night at (888) 329-8026 for same-day service.</p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Emergency Tree Services</h2>
+            <p>When it comes to tree emergencies, immediate response is critical.</p>
+            <p>If you're experiencing any of the issues listed below, contact us right away for prompt and reliable service.</p>
+            <ul>
+                <li>Trees Damaged by Storms</li>
+                <li>Trees Fallen on Structures</li>
+                <li>Leaning or Unstable Trees</li>
+                <li>Lightning-Struck Trees</li>
+                <li>Trees on Power Lines</li>
+                <li>Cracked or Split Trunks</li>
+                <li>Trees Blocking Driveways/Roads</li>
+                <li>Diseased Trees at Risk of Falling</li>
+            </ul>
+            <p>Our emergency tree experts are available 24/7, including weekends and holidays. Call us at (888) 329-8026 for immediate response.</p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Tree Cutting Services</h2>
+            <p>From large tree cutting to precision removal of dangerous limbs, we offer a full spectrum of tree cutting services, including:</p>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Large Tree Cutting</h3>
+                    <p>Professional cutting of tall or massive trees requiring specialized equipment.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Dangerous Tree Cutting</h3>
+                    <p>Safe removal of hazardous trees threatening property or safety.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Storm Damage Cutting</h3>
+                    <p>Emergency cutting of trees damaged by storms or high winds.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Precision Tree Cutting</h3>
+                    <p>Expert cutting techniques for trees in challenging locations.</p>
+                </div>
+            </ul>
+            <p>Need help deciding which tree service is right for your situation? The next step is to discuss your needs, so we can recommend the perfect solution for you. Call us today at (888) 329-8026 to schedule your free assessment.</p>
+        </div>
+    </section>
+
+    <section class="service-section">
+        <div class="container">
+            <h2>Why Call Us?</h2>
+            <p>Reliable service, affordable prices, on-time arrival and attention to detail... Here are some of the reasons customers prefer our tree service over other companies:</p>
+            <ul>
+                <li>Quick, Same-Day Appointments</li>
+                <li>24-Hour Emergency Service</li>
+                <li>Straightforward Pricing</li>
+                <li>No-Obligation, Up-Front Quotes</li>
+                <li>Fast Response, 7 Days a Week</li>
+                <li>Quality Removal & Cutting</li>
+                <li>Highly Skilled Technicians</li>
+                <li>100% Satisfaction Guaranteed</li>
+            </ul>
+            <p>Discover the difference today! All you have to do is pick up the phone and call (888) 329-8026 - Let us do the rest.</p>
+            
+            <div class="testimonial">
+                "The service was top-notch. Your technician was very knowledgeable and helpful. He explained what needed to be done and provided several options to choose from. The removal was thorough and your service was excellent."
+                <p><strong>- Susan D.</strong></p>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features section-padding">
+    <section class="service-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Why Choose JMC Agency</h2>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <h3>Exclusive Territory</h3>
-                    <p>We only work with one tree service company per area, ensuring you don't compete for leads.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-phone-volume"></i>
-                    </div>
-                    <h3>Live Phone Calls</h3>
-                    <p>Connect directly with homeowners ready to book your tree services.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3>Pre-Qualified Leads</h3>
-                    <p>We filter out tire-kickers, ensuring you only receive serious inquiries.</p>
-                </div>
-            </div>
+            <h2>We're Local: 24/7 Tree Service Experts Near You</h2>
+            <p>We're on a mission to offer the best tree removal and cutting service possible. We know it can be difficult to find a contractor that provides reliable service and quality work at a fair price.</p>
+            <p>Beginning with the initial conversation, until after your job is complete, our team has one goal in mind: To give you an exceptional customer experience at an affordable price, without cutting corners. You can count on our trusted professionals for:</p>
+            
+            <h3>- Fast Service, Day or Night</h3>
+            <p>Your time is valuable. To best serve you, we offer same-day service and flexible appointment times that fit your schedule. Our tree technicians arrive fully equipped, which means they can handle most issues in just a single visit - Saving you time and money!</p>
+            
+            <h3>- Transparent, Up-Front Pricing</h3>
+            <p>Forget about surprise charges or hidden fees. Before work begins, your technician will discuss available options and provide an up-front cost analysis. This way you can make informed decisions and know exactly what you're paying for ahead of time.</p>
+            
+            <h3>- 24-Hour Emergency Repairs</h3>
+            <p>We understand how important it is to address tree emergencies quickly - That's why we're available 24-hours, 7 days a week.</p>
+            
+            <h3>- Reliable, Local Experts</h3>
+            <p>With contractors throughout the area, we are your best option for quality service, no matter where you're located. Whether you need emergency removal or cutting, our team is here for you.</p>
+            
+            <h3>- 5-Star Reputation</h3>
+            <p>Certified technicians, friendly support, on-time arrival and quality workmanship. From start to finish, making sure you're happy with our service is our top priority.</p>
+            
+            <p>We have a tree service technician available today. Call our 24-hour phone line at (888) 329-8026 for fast service, day or night.</p>
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials section-padding">
+    <section class="service-section">
         <div class="container">
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"JMC Agency has transformed our business. We're getting high-quality leads and closing more deals than ever before."</p>
-                    <p class="testimonial-author">- John Smith, Smith's Tree Service</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"The exclusive territory feature is a game-changer. We're no longer competing for the same leads as our competitors."</p>
-                    <p class="testimonial-author">- Sarah Johnson, Green Leaf Tree Care</p>
-                </div>
-            </div>
+            <h2>The Trusted Name For Tree Removal & Cutting</h2>
+            <p>Trying to find a tree service company nearby? We were created to help homeowners find top-rated, local contractors. Each day, we connect hundreds of people with reliable tree experts and we're confident we can help you too!</p>
+            <p>Our service includes a network of tree removal technicians and a dispatch center. Here's how it works:</p>
+            
+            <h3>1. Give us a Call</h3>
+            <p>Contact our 24-hour dispatch center. Tell our tree experts about your project and what services you need done.</p>
+            
+            <h3>2. Schedule Service</h3>
+            <p>If we have a technician available in your area, our team will book your appointment or in-home estimate.</p>
+            
+            <h3>3. Your Job Gets Completed</h3>
+            <p>If you decide to proceed, your contractor will perform the work needed to complete your job - Quickly, safely and affordably.</p>
+            
+            <p>Whether you need emergency removal or cutting, we're the only company you'll ever have to call. Get in touch with us today at (888) 329-8026 for fast service and a no-obligation estimate.</p>
         </div>
     </section>
 
-    <section class="cta section-padding">
+    <footer class="footer">
         <div class="container">
-            <h2>Ready to Grow Your Tree Service Business?</h2>
-            <p>Claim your exclusive territory and start receiving high-quality leads today!</p>
-            <a href="#contact" class="btn">Get Started Now</a>
-        </div>
-    </section>
-
-    <section id="contact" class="contact section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+            <h2>Emergency Tree Service</h2>
+            <p>Same-Day Removal, Cutting or Emergency Service. Call us 24/7: (888) 329-8026</p>
+            <div style="margin-top: 30px;">
+                <p>© 2025 Tree Service Pros - All Rights Reserved</p>
+                <p>Privacy & Terms | Do Not Sell My Info</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in">
+    </footer>
+</body>
+</html>
